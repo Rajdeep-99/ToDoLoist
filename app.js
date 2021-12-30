@@ -4,6 +4,7 @@ const express = require("express");
 const path = require('path');
 const mongoose = require("mongoose");
 const _ = require("lodash");
+const { env } = require("process");
 
 const app = express();
 
@@ -139,6 +140,6 @@ app.post("/delete", function(req,res){
     }
 });
 
-app.listen(3000,function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("Server is running on port 3000");
 });
